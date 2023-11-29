@@ -1,0 +1,19 @@
+{
+  "name": "qap3-combined",
+  "version": "1.0.0",
+  "description": "QAP 3 Combined Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanCharlesHolloway/QAP3-Combined.git"
+  },
+  "author": "Evan Holloway",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvanCharlesHolloway/QAP3-Combined/issues"
+  },
+  "homepage": "https://github.com/EvanCharlesHolloway/QAP3-Combined#readme"
+}
