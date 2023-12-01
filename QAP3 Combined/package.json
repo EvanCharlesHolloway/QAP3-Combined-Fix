@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EvanCharlesHolloway/QAP3-Combined/issues"
   },
-  "homepage": "https://github.com/EvanCharlesHolloway/QAP3-Combined#readme"
+  "homepage": "https://github.com/EvanCharlesHolloway/QAP3-Combined#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
