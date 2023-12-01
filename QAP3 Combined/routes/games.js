@@ -3,6 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const { Pool } = require('pg');
+const mockGamesData = require('./mockdata');
 
 // Create a PostgreSQL connection pool
 const pool = new Pool({
@@ -16,8 +17,8 @@ const pool = new Pool({
 // GET all games
 router.get('/', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM games');
-    res.json(result.rows);
+    // Use mock data for testing purposes
+    res.json(mockGamesData);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal Server Error' });
