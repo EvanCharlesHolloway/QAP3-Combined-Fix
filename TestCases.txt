@@ -1,0 +1,53 @@
+Test Scenarios:
+
+1. As a user, when I visit the home page, I should see a list of all games available in the game store.
+Fetch all games from the API:
+
+
+
+2. As a developer, when I make a GET request to the /api/games endpoint, I should receive a JSON response containing all games.
+Add a new game through the web page:
+
+
+
+3. As an admin, when I add a new game through the web page, it should be displayed on the list of games, and the details should be stored in the database.
+Add a new game through the API:
+
+
+
+4. As a developer, when I make a POST request to the /api/games endpoint with valid game details, a new game entry should be added to the database.
+View details of a specific game on the web page:
+
+
+
+5. As a user, when I click on a game in the list, I should be taken to a page showing detailed information about that game.
+Fetch details of a specific game from the API:
+
+
+
+6. As a developer, when I make a GET request to the /api/games/:id endpoint with a valid game ID, I should receive a JSON response containing details of that specific game.
+Update game details through the web page:
+
+
+
+7. As an admin, when I edit the details of a game on the web page and save the changes, the updated information should be reflected on the game details page.
+Update game details through the API:
+
+
+
+8. As a developer, when I make a PUT request to the /api/games/:id endpoint with updated game details, the database entry for that game should be updated accordingly.
+Partially update game details through the API:
+
+
+
+9. As a developer, when I make a PATCH request to the /api/games/:id endpoint with partial game details, only the specified fields of the game in the database should be updated.
+Delete a game through the web page:
+
+
+
+10. As an admin, when I delete a game through the web page, it should no longer appear in the list of games, and the corresponding entry should be removed from the database.
+Delete a game through the API:
+
+
+
+11. As a developer, when I make a DELETE request to the /api/games/:id endpoint with a valid game ID, the corresponding game entry should be deleted from the database.
