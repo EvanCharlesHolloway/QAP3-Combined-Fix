@@ -18,7 +18,8 @@ const pool = new Pool({
 router.get('/', async (req, res) => {
   try {
     // Use mock data for testing purposes
-    res.json(mockGamesData);
+    const games = mockGamesData;
+    res.render('game', { games });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal Server Error' });
@@ -45,7 +46,13 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   const newGame = req.body;
   try {
-    const result = await pool.query('INSERT INTO games (title) VALUES ($1) RETURNING *', [newGame.title]);
+    // Assuming the first game in mock data has the ID you want to use
+    const firstGameId = mockGamesData[0].id;
+    
+    const result = await pool.query('INSERT INTO games (title, id) VALUES ($1, $2) RETURNING *', [
+      newGame.title,
+      firstGameId, // Use the first game's ID for the new game
+    ]);
     res.status(201).json(result.rows[0]);
   } catch (error) {
     console.error(error);
