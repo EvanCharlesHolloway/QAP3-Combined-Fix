@@ -1,0 +1,19 @@
+<!-- views/games.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+</head>
+<body>
+    <h1>Game Store</h1>
+    <ul id="gameList">
+        <!-- Use EJS syntax to iterate through games -->
+        <% games.forEach(game => { %>
+            <li><%= game.title %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>

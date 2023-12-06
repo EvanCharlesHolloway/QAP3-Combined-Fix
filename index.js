@@ -4,8 +4,14 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+
 // Middleware to parse incoming requests with JSON payloads
 app.use(express.json());
+
+// Serve static files from the "QAP3 Combined/public" directory
+app.use(express.static('QAP3 Combined/public'));
 
 // Routes
 const gameRoutes = require('./QAP3 Combined/routes/games');
