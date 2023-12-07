@@ -3,7 +3,6 @@
 const express = require('express');
 const router = express.Router();
 const { Pool } = require('pg');
-const mockGamesData = require('./mockdata');
 
 // Create a PostgreSQL connection pool
 const pool = new Pool({
@@ -17,8 +16,11 @@ const pool = new Pool({
 // GET all games
 router.get('/', async (req, res) => {
   try {
-    // Use mock data for testing purposes
-    const games = mockGamesData;
+    // Fetch games from the database
+    const result = await pool.query('SELECT * FROM games');
+    const games = result.rows;
+
+    // Render the 'game' view with the fetched games
     res.render('game', { games });
   } catch (error) {
     console.error(error);
@@ -47,7 +49,7 @@ router.post('/', async (req, res) => {
   const newGame = req.body;
   try {
     // Assuming the first game in mock data has the ID you want to use
-    const firstGameId = mockGamesData[0].id;
+    const firstGameId = games[0].id;
     
     const result = await pool.query('INSERT INTO games (title, id) VALUES ($1, $2) RETURNING *', [
       newGame.title,
