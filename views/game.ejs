@@ -1,0 +1,23 @@
+<!-- views/game.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+</head>
+<body>
+    <h1>Game Store</h1>
+    <ul id="gameList">
+        <!-- Game items will be added here dynamically -->
+        <% games.forEach(game => { %>
+            <li><%= game.title %></li>
+        <% }); %>
+    </ul>
+
+    <script>
+        // add JavaScript code here if needed
+    </script>
+</body>
+</html>
